@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLOv8 Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, blue, red);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        #logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo Image -->
+        <img id="logo" src="{{ url_for('static', filename='images/image.png') }}" alt="Logo">
+
+        <h1>YOLOv8 Weapon Detection</h1>
+
+        <!-- Form to Upload Image -->
+        <form action="/detect" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <br>
+            <input type="submit" value="Upload and Detect">
+        </form>
+    </div>
+</body>
+</html>

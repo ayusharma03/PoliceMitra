@@ -1,0 +1,63 @@
+# services:
+#   web:
+#     build: fastapi
+#     ports:
+#       - 8000:8000
+#     volumes:
+#       - ./fastapi:/fastapiapp.py
+#     networks:
+#       - tutorial-net
+
+#   ollama:
+#     build: ollama
+#     ports:
+#       - 11434:11434
+#     volumes:
+#       - tutorial-vol:/ollama
+#     networks:
+#       - tutorial-net
+#     entrypoint: ["/usr/bin/bash", "/pull-llama3.1.sh"]
+
+# networks:
+#   tutorial-net:
+#     driver: bridge
+
+# volumes:
+#   tutorial-vol:
+#     driver: local
+
+version: "3"
+
+services:
+  web:
+    build: fastapi
+    ports:
+      - 8000:8000
+    volumes:
+      - ./fastapi:/fastapiapp.py
+      - ./pdf:/app/pdf
+      - ./db:/app/db
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      - ollama
+    networks:
+      - tutorial-net
+
+  ollama:
+    build: ollama
+    ports:
+      - 11434:11434
+    volumes:
+      - tutorial-vol:/ollama
+    networks:
+      - tutorial-net
+    entrypoint: ["/usr/bin/bash", "/pull-llama3.1.sh"]
+
+networks:
+  tutorial-net:
+    driver: bridge
+
+volumes:
+  tutorial-vol:
+    driver: local

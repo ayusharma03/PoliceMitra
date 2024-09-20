@@ -1,0 +1,29 @@
+#Import the base image
+FROM python:3.12-slim
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy everything from the current directory to /app in the container
+COPY ./ /app/
+
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y build-essential libgl1-mesa-glx && \
+    apt-get install -y python3-dev gcc
+
+# Install CMake (required for some packages)
+RUN apt-get install -y cmake
+
+# Optional: Install additional libraries if needed
+RUN apt-get install -y libffi-dev libxml2-dev libxslt1-dev zlib1g-dev
+
+# Install the dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expose the port your app runs on
+EXPOSE 8080
+
+# Run the application
+# CMD fastapi run --reload
+# CMD python fastapiapp.py
+CMD ["python", "fastapiapp.py", "--host", "0.0.0.0", "--port", "8000"]

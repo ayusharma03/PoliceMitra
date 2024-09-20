@@ -1,0 +1,17 @@
+# Use the Ollama base image
+FROM ollama/ollama
+
+# Install dos2unix to fix potential line ending issues
+RUN apt-get update && apt-get install -y dos2unix
+
+# Copy the script into the container
+COPY ./pull-llama3.1.sh /pull-llama3.1.sh
+
+# Convert line endings to Unix format
+RUN dos2unix /pull-llama3.1.sh
+
+# Make the script executable
+RUN chmod +x /pull-llama3.1.sh
+
+# Run the script
+CMD ["/pull-llama3.1.sh"]
