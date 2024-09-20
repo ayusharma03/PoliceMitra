@@ -37,13 +37,13 @@ PoliceMitra is an advanced web-based system designed to assist law enforcement a
 
 | Landing Page |
 |:------------:|
-| ![Landing Page](https://github.com/ayusharma03/PoliceMitra/blob/master/src/Screenshot%202024-09-20%20075040.png) |
+| ![Landing Page](https://github.com/ayusharma03/PoliceMitra/blob/master/ss/landing.png) |
 
 ## 📸 Working
 
 | Weapon Detection Example | Real-Time Chatbot Assistance |
 |:------------------------:|:----------------------------:|
-| ![YOLOv8 Detection](https://github.com/ayusharma03/PoliceMitra/blob/master/src/Screenshot%202024-09-20%20074757.png) | ![Chatbot Example](https://github.com/ayusharma03/PoliceMitra/blob/master/src/Screenshot%202024-09-20%20004727.png) |
+| ![YOLOv8 Detection](https://github.com/ayusharma03/PoliceMitra/blob/master/ss/yolo.png) | ![Chatbot Example](https://github.com/ayusharma03/PoliceMitra/blob/master/ss/chatbot.png) |
 
 *Replace the image paths with actual file paths or URLs of your screenshots.*
 
