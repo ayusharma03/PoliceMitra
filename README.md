@@ -28,7 +28,7 @@ PoliceMitra is an advanced web-based system designed to assist law enforcement a
 - **Docker**: Containerization tool used for deploying the chatbot and server environment efficiently.
 - **Python**: Programming language used for developing the backend, AI models, and chatbot logic.
 - **Node.js & Express.js**: Backend environment and framework for handling requests between the user interface and AI models.
-- **MySQL**: A secure, locally hosted relational database to store FIR data, evidence, and legal results.
+- **MongoDB**: A secure, locally hosted relational database to store FIR data, evidence, and legal results.
 - **ChromaDB**: Vector database used for storing embeddings in the RAG model, enabling fast and accurate information retrieval.
 - **HTML/CSS/JavaScript**: Frontend technologies that power the web interface for interacting with the system.
 - **OpenCV**: Used for processing and preparing image and video data for the YOLOv8 model.
